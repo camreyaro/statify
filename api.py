@@ -10,9 +10,9 @@ from auth import SpotifyAuth
 
 router = APIRouter()
 
-CLIENT_ID = ''
-CLIENT_SECRET = ''
-REDIRECT_URI = ''
+CLIENT_ID = os.getenv('CLIENT_ID')
+CLIENT_SECRET = os.getenv('CLIENT_SECRET')
+REDIRECT_URI = os.getenv('REDIRECT_URI')
 
 spotify_auth = SpotifyAuth(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI)
 
