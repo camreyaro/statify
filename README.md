@@ -22,10 +22,10 @@
 
 | Method | Route                   | Description                            |
 |--------|-------------------------|----------------------------------------|
-| GET    | `/user_data`            | Retrieves user profile information     |
-| GET    | `/top_tracks`           | Retrieves user's top tracks            |
-| GET    | `/top_artists`          | Retrieves user's top artists           |
-| GET    | `/top_tracks_by_artist` | Retrieves top tracks grouped by artist |
+| GET    | `/user-data`            | Retrieves user profile information     |
+| GET    | `/top-tracks`           | Retrieves user's top tracks            |
+| GET    | `/top-artists`          | Retrieves user's top artists           |
+| GET    | `/top-tracks-by-artist` | Retrieves top tracks grouped by artist |
 
 ---
 

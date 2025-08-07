@@ -51,7 +51,7 @@ def callback(request: Request):
     return token_data
 
 # API
-@router.get('/user_data')
+@router.get('/user-data')
 @spotify_auth.check_auth_token_timeout
 def user_data():
     r = httpx.get('https://api.spotify.com/v1/me',
@@ -63,7 +63,7 @@ def user_data():
         'photo': r_data['images'][0]['url'],
     }
 
-@router.get('/top_tracks')
+@router.get('/top-tracks')
 @spotify_auth.check_auth_token_timeout
 def top_tracks():
     r = httpx.get('https://api.spotify.com/v1/me/top/tracks?limit=10',
@@ -82,7 +82,7 @@ def top_tracks():
 
     return top_tracks
 
-@router.get('/top_artists')
+@router.get('/top-artists')
 @spotify_auth.check_auth_token_timeout
 def top_tracks():
     r = httpx.get('https://api.spotify.com/v1/me/top/artists?limit=10',
@@ -100,7 +100,7 @@ def top_tracks():
 
     return top_artists
 
-@router.get('/top_tracks_by_artist')
+@router.get('/top-tracks-by-artist')
 @spotify_auth.check_auth_token_timeout
 def top_tracks_by_artist():
     offset = 0
