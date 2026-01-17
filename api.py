@@ -173,7 +173,7 @@ def mood(request: Request):
     if not token:
         return JSONResponse({"error": "No access token"}, status_code=401)
 
-    limit = 20
+    limit = 50
     r = httpx.get(f'https://api.spotify.com/v1/me/player/recently-played?limit={limit}',
                    headers={'Authorization': f'Bearer {token}'})
 
@@ -182,8 +182,10 @@ def mood(request: Request):
 
     for item in r_data.get('items', []):
         track_info = {
+            'id': item['track']['id'],
             'name': item['track']['name'],
-            'artist': item['track']['artists'][0]['name']
+            'artist': item['track']['artists'][0]['name'],
+            'played_at': item['played_at']
         }
         recently_listened_tracks.append(track_info)
 
